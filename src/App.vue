@@ -1,13 +1,12 @@
 <template>
   <Navbar />
   <Sidebar />
-  
   <button 
-    class="btn btn-primary fixed-button" 
+    class="btn btn-primary btnFixo" 
     type="button" 
     data-bs-toggle="offcanvas" 
-    data-bs-target="#staticBackdrop" 
-    aria-controls="staticBackdrop">
+    data-bs-target="#listaFavoritas" 
+    aria-controls="listaFavoritas">
   Minha Lista
 </button>
 </template>
@@ -22,7 +21,7 @@ import Sidebar from './components/Sidebar.vue'
     width: 160px;
 }
 
-.fixed-button {
+.btnFixo {
   position: fixed;
   bottom: 20px;
   right: 20px; 
