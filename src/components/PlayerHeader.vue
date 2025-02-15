@@ -10,10 +10,9 @@
         :class="isPlaying ? 'btn-danger' : 'btn-success'">
         <i :class="isPlaying ? 'fas fa-stop' : 'fas fa-play'"></i>
       </button>
-      <button class="btn btn-outline-secondary">
-        <i class="fas fa-volume-up"></i>
-      </button>
     </div>
+    <!-- Player de áudio que toca em modo oculto. -->
+    <audio ref="audioElement" :src="currentRadioUrl" style="display: none;"></audio>
   </div>
 </template>
 
@@ -22,27 +21,66 @@ export default {
   data() {
     return {
       isPlaying: false,
-      currentRadioName: "Radio Example", // Nome da rádio
+      currentRadioName: "Aguardando..", 
+      currentRadioUrl: "",
     };
   },
   methods: {
+    // Alterna entre play e pause no áudio
     togglePlay() {
-      this.isPlaying = !this.isPlaying;
-      // Lógica para começar/parar a rádio pode ser colocada aqui
+      const audio = this.$refs.audioElement;
+      if (!audio) return;
+
       if (this.isPlaying) {
-        console.log("Rádio em execução...");
-        // Iniciar o áudio
-      } else {
+        audio.pause();
+        this.isPlaying = false;
         console.log("Rádio parada...");
-        // Parar o áudio
+      } else {
+        if (!this.currentRadioUrl) {
+          console.warn("Nenhuma rádio selecionada para tocar.");
+          return;
+        }
+        audio.play()
+          .then(() => {
+            this.isPlaying = true;
+            console.log("Rádio em execução...");
+          })
+          .catch((error) => {
+            console.error("Erro ao reproduzir a rádio:", error);
+          });
       }
     },
-  },
+
+    // Atualiza a rádio a ser reproduzida e inicia a reprodução
+    setRadio(radioName, radioUrl) {
+      const audio = this.$refs.audioElement;
+
+      // Se já estiver tocando uma rádio diferente, pausa a atual
+      if (this.isPlaying && this.currentRadioUrl !== radioUrl) {
+        audio.pause();
+        this.isPlaying = false;
+      }
+
+      this.currentRadioName = radioName;
+      this.currentRadioUrl = radioUrl;
+
+      // Tenta reproduzir a nova rádio automaticamente
+      if (radioUrl && !this.isPlaying) {
+        audio.play()
+          .then(() => {
+            this.isPlaying = true;
+            console.log("Nova rádio em execução...");
+          })
+          .catch((error) => {
+            console.error("Erro ao reproduzir a nova rádio:", error);
+          });
+      }
+    }
+  }
 };
 </script>
 
 <style scoped>
-
 .current-radio-name {
   font-weight: bold;
   font-size: 16px;

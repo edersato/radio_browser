@@ -1,5 +1,6 @@
 <template>
-  <div class="card my-3">
+  <!-- Cria um card para cada radio da api -->
+  <div class="card">
     <div class="card-body">
       <img :src="favicon" class="card-img-top" alt="Logo do station" v-if="favicon">
       <h5 class="card-title">{{ name }}</h5>
