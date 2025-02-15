@@ -11,8 +11,13 @@
             <img :src="radio.favicon" alt="favicon" class="favicon">
             <span>{{ radio.name }} - {{ radio.country }}</span>
           </div>
-          <button class="btn btn-primary btn-sm" @click="editRadio(radio)">Editar</button>
-          <button class="btn btn-danger btn-sm" @click="removeFavorite(radio)">Remover</button>
+          <button class="btn btn-primary" @click="editRadio(radio)">
+            <font-awesome-icon icon="fas-solid fa-pencil" />
+          </button>
+          <button class="btn btn-danger" @click="removeFavorite(radio)">
+            <font-awesome-icon icon="fas-solid fa-trash-can" />
+            
+          </button>
         </li>
       </ul>
       <p v-if="favorites.length === 0">Nenhuma rádio favoritada.</p>

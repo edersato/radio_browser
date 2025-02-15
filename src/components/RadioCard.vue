@@ -3,8 +3,8 @@
   <div class="card">
     <div class="card-body">
       <img :src="favicon" class="card-img-top" alt="Logo do station" v-if="favicon">
-      <h5 class="card-title">{{ name }}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{ state }}, {{ country }}</h6>
+      <h5 class="card-title mt-3">{{ name }}</h5>
+      <h6 class="card-subtitle my-2 text-muted">{{ state }}, {{ country }}</h6>
       <h6 class="card-subtitle mb-2 text-muted">{{ tags }}</h6>
     </div>
   </div>

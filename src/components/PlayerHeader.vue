@@ -4,14 +4,15 @@
       <p class="current-radio-name mb-0">{{ currentRadioName }}</p>
     </div>
     <div class="controls d-flex align-items-center">
-      <button 
-        @click="togglePlay" 
-        class="btn btn-outline-primary mr-2"
+      <button @click="togglePlay" class="btn"
         :class="isPlaying ? 'btn-danger' : 'btn-success'">
-        <i :class="isPlaying ? 'fas fa-stop' : 'fas fa-play'"></i>
+        <font-awesome-icon 
+          :icon="isPlaying ? 'fa-solid fa-stop' : 'fas-solid fa-play'" 
+          :class="{ playing: isPlaying }" 
+        />
       </button>
     </div>
-    <!-- Player de áudio que toca em modo oculto. -->
+    <!-- Player de áudio funcional que toca em modo oculto. -->
     <audio ref="audioElement" :src="currentRadioUrl" style="display: none;"></audio>
   </div>
 </template>
