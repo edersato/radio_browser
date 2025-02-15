@@ -49,3 +49,4 @@ Para iniciar o projeto em modo de desenvolvimento, insira o comando:
 - Busca por nome da rádio, país ou idioma
 - Live reloading para busca de rádio
 - Responsividade para todos os tamanhos de tela
+- Player de rádio funcional
