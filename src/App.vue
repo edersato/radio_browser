@@ -27,4 +27,11 @@ import Sidebar from './components/Sidebar.vue'
   right: 20px; 
   z-index: 1050; 
 }
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .btnFixo {
+    font-size: 8px;
+    padding: 4px;
+  }
+}
 </style>

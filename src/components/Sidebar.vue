@@ -11,8 +11,13 @@
             <img :src="radio.favicon" alt="favicon" class="favicon">
             <span>{{ radio.name }} - {{ radio.country }}</span>
           </div>
-          <button @click="editRadio(radio)">Editar</button>
-          <button @click="removeFavorite(radio)">Remover</button>
+          <button class="btn btn-primary" @click="editRadio(radio)">
+            <font-awesome-icon icon="fas-solid fa-pencil" />
+          </button>
+          <button class="btn btn-danger" @click="removeFavorite(radio)">
+            <font-awesome-icon icon="fas-solid fa-trash-can" />
+            
+          </button>
         </li>
       </ul>
       <p v-if="favorites.length === 0">Nenhuma rádio favoritada.</p>
@@ -23,20 +28,20 @@
       <div class="modal-content">
         <h3>Editar Rádio</h3>
         <label>Nome:</label>
-        <input v-model="editForm.name" type="text" />
+        <input class="form-control" v-model="editForm.name" type="text" />
         
         <label>País:</label>
-        <input v-model="editForm.country" type="text" />
+        <input class="form-control" v-model="editForm.country" type="text" />
         
         <label>Idioma:</label>
-        <input v-model="editForm.language" type="text" />
+        <input class="form-control" v-model="editForm.language" type="text" />
         
         <label>Favicon:</label>
-        <input v-model="editForm.favicon" type="text" />
+        <input class="form-control" v-model="editForm.favicon" type="text" />
         
         <div class="modal-buttons">
-          <button @click="saveEdit">Salvar</button>
-          <button @click="cancelEdit">Cancelar</button>
+          <button class="btn btn-success" @click="saveEdit">Salvar</button>
+          <button class="btn btn-secondary" @click="cancelEdit">Cancelar</button>
         </div>
       </div>
     </div>
@@ -144,7 +149,7 @@ button {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  min-width: 300px;
+  width: 500px;
 }
 
 .modal-buttons {

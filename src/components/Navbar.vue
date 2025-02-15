@@ -12,16 +12,12 @@
             </ul>
         </div>
     </nav>
-    <PlayerHeader />
     <router-view></router-view>
 </template>
 
 <script>
-import PlayerHeader from './PlayerHeader.vue';
-
 export default {
     name: 'Navbar',
-    components: {PlayerHeader}
 }
 </script>
 
