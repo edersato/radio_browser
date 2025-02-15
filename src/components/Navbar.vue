@@ -10,21 +10,21 @@
                     <router-link class="nav-link" to="/">Home</router-link>
                 </li>
                 <li class="nav-item">
-                    <router-link class="nav-link" to="/favoritos">Minha Lista</router-link>
-                </li>
-                <li class="nav-item">
-                    <router-link class="nav-link" to="/player">Player</router-link>
+                    <router-link class="nav-link" to="/favoritos">Favoritos</router-link>
                 </li>
             </ul>
         </div>
     </nav>
-
+    <PlayerHeader />
     <router-view></router-view>
 </template>
 
 <script>
+import PlayerHeader from './PlayerHeader.vue';
+
 export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    components: {PlayerHeader}
 }
 </script>
 

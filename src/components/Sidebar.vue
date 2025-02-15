@@ -1,5 +1,15 @@
-<template>
-  <h1>Sidebar</h1>
+<template>  
+  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="staticBackdropLabel">Rádios Favoritas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Preciso ver como colocar as radios aqui ainda
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
