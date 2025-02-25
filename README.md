@@ -1,6 +1,5 @@
-# Soluct Sistemas - Teste prático
 
-Teste prático da Soluct Sistemas para a vaga de Desenvolvedor Vue.
+# Radio Browser
 
 O projeto foi feito com base no desafio da [Coodesh](https://github.com/coodesh/frontend-radio-browser).
 
@@ -49,4 +48,4 @@ Para iniciar o projeto em modo de desenvolvimento, insira o comando:
 - Busca por nome da rádio, país ou idioma
 - Live reloading para busca de rádio
 - Responsividade para todos os tamanhos de tela
-- Player de rádio funcional
+
